@@ -53,7 +53,7 @@
     </section>
 
     <footer class="info">
-      <p><router-link :to="{name: 'logout'}">Logout as  {{ authUser.name }}</router-link></p>
+      <p><router-link :to="{name: 'logout'}">Logout as {{ authUser.name }}</router-link></p>
       <p>Double-click to edit a todo</p>
       <p>Created by <a href="https://krisanalfa.github.io">Krisan Alfa Timur</a></p>
       <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>

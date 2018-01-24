@@ -11,18 +11,24 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return [
-        'message' => $app->version()
-    ];
+use Illuminate\Http\JsonResponse;
+
+$router->get('/', function () use ($router): JsonResponse {
+    return new JsonResponse([
+        'message' => 'OK',
+        'data' => [
+            'api_version' => '1.1.0',
+            'framework_version' => $router->app->version(),
+        ]
+    ]);
 });
 
-$app->post('/login', 'AuthController@login');
+$router->post('/login', 'AuthController@login');
 
-$app->group(['middleware' => 'auth'], function () use ($app) {
-    $app->get('/logout', 'AuthController@logout');
-    $app->get('/task', 'TaskController@search');
-    $app->post('/task', 'TaskController@create');
-    $app->patch('/task/{id}', 'TaskController@update');
-    $app->delete('/task/{id}', 'TaskController@delete');
+$router->group(['middleware' => 'auth'], function ($router) {
+    $router->get('/logout', 'AuthController@logout');
+    $router->get('/task', 'TaskController@search');
+    $router->post('/task', 'TaskController@create');
+    $router->patch('/task/{id}', 'TaskController@update');
+    $router->delete('/task/{id}', 'TaskController@delete');
 });

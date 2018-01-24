@@ -12,7 +12,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'api_token'
+        'name', 'email', 'api_token',
     ];
 
     /**

@@ -1,4 +1,4 @@
-import { omit } from 'lodash'
+import omit from 'lodash/omit'
 import localStorage from 'store'
 import { LOGIN, LOGOUT } from './mutation-types'
 

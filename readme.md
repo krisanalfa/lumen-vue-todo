@@ -7,7 +7,7 @@ Technologies used:
 - [VueHttp](https://github.com/pagekit/vue-resource/)
 
 Backend:
-- [Lumen 5.4](https://lumen.laravel.com/docs/5.4)
+- [Lumen 5.5](https://lumen.laravel.com/docs/5.5)
 
 ## Quick Start
 

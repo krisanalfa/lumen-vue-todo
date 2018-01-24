@@ -13,7 +13,7 @@ class Task extends Model
      */
     protected $casts = [
         'done' => 'boolean',
-        'user_id' => 'integer'
+        'user_id' => 'integer',
     ];
 
     /**
@@ -22,7 +22,7 @@ class Task extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'title', 'done'
+        'user_id', 'title', 'done',
     ];
 
     /**

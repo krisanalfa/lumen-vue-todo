@@ -28,14 +28,14 @@ button[type="submit"] {
 
 .text {
   width: 100%;
-	padding: 16px;
-	border: none;
-	font-size: 24px;
+  padding: 16px;
+  border: none;
+  font-size: 24px;
   position: relative;
-	line-height: 1.4em;
-	border: 1px solid #999;
-	box-sizing: border-box;
-	font-smoothing: antialiased;
+  line-height: 1.4em;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  font-smoothing: antialiased;
   background: rgba(0, 0, 0, 0.003);
 
   &[type="email"] {
@@ -66,13 +66,13 @@ export default {
   methods: {
     login () {
       this.$http.post('login', this.credential)
-      .then(({ data }) => {
-        this.$store.commit(LOGIN, data.data)
-        this.$store.dispatch(FETCH_TASKS)
-        this.$router.push({name: 'root'})
-      }, ({ data }) => {
-        data && alert(data.message)
-      })
+        .then(({ data }) => {
+          this.$store.commit(LOGIN, data.data)
+          this.$store.dispatch(FETCH_TASKS)
+          this.$router.push({name: 'root'})
+        }, ({ data }) => {
+          data && alert(data.message)
+        })
     }
   }
 }

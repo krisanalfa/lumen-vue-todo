@@ -5,7 +5,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 try {
     (new Dotenv\Dotenv(__DIR__.'/../'))->load();
 } catch (Dotenv\Exception\InvalidPathException $e) {
-    //
 }
 
 /*
@@ -60,7 +59,7 @@ $app->singleton(
 */
 
 $app->middleware([
-   App\Http\Middleware\CORSMiddleware::class
+   App\Http\Middleware\CORSMiddleware::class,
 ]);
 
 $app->routeMiddleware([
@@ -92,7 +91,9 @@ $app->register(App\Providers\AuthServiceProvider::class);
 |
 */
 
-$app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
+$app->router->group([
+    'namespace' => 'App\Http\Controllers',
+], function ($router) {
     require __DIR__.'/../routes/web.php';
 });
 
