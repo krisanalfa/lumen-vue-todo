@@ -4,6 +4,10 @@
   "description": "ToDo App",
   "author": "Krisan Alfa Timur <krisan47@gmail.com>",
   "private": true,
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
